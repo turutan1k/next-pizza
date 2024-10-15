@@ -2,26 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@layer base {
+    :root {
+        --color-black: 43, 43, 43;
+        --color-white: 255, 255, 255;
+        --color-grey: 241, 241, 241;
+        --color-hover: 254, 95, 0;
+        --color-light-orange: 255, 247, 238;
+    }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    background: rgb(var(--color-white));
+    color: rgb(var(--color-black));
+    font-style: normal;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+html {
+    scroll-behavior: smooth;
+}
+html,
+body {
+    font-family: var(--font-nunito);
+    font-weight: 400;
+    font-size: 62.5%;
+}
+.nunito {
+    font-family: var(--font-nunito);
+}
+* {
+    box-sizing: border-box;
+    font-weight: 500;
+}
+
+.preload * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+}
+.global-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 7.4rem;
+    padding-right: 7.4rem;
 }
